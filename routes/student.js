@@ -12,9 +12,9 @@ router.get("/", async (req, res) => {
       },
       {
         $sort: {
-            name: 1,
+          name: 1,
         },
-    },
+      },
       {
         $lookup: {
           localField: "classId",
@@ -37,7 +37,7 @@ router.get("/", async (req, res) => {
         $project: {
           isDeleted: 0,
           __v: 0,
-          classId: 0
+          classId: 0,
         },
       },
     ]);

@@ -12,12 +12,12 @@ router.get("/", async (req, res) => {
       },
       {
         $lookup: {
-          localField: '_id',
+          localField: "_id",
           from: "courses",
-          foreignField: 'teacherId',
-          as: 'courses'
-        }
-      }
+          foreignField: "teacherId",
+          as: "courses",
+        },
+      },
     ]);
     res.json({ message: "Fetched successfully", data });
   } catch ({ message }) {
