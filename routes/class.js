@@ -1,7 +1,6 @@
 import express from "express";
 const router = express.Router();
 import classModel from "../models/class.js";
-
 router.get("/", async (req, res) => {
   try {
     const data = await classModel.aggregate([
