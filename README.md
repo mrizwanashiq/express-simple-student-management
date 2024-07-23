@@ -24,7 +24,7 @@ Stores information about teachers.
 | `contactNumber` | String | Contact number        |
 
 **Example Document:**
-```json
+```
 {
   "_id": ObjectId("teacherId1"),
   "name": "John Doe",
@@ -44,7 +44,7 @@ Stores information about classes.
 | `inchargeTeacherId` | ObjectId | References `_id` in Teacher collection |
 
 **Example Document:**
-```json
+```
 {
   "_id": ObjectId("classId1"),
   "name": "Math 101",
@@ -64,7 +64,7 @@ Stores information about courses.
 | `classId` | ObjectId | References `_id` in Class collection |
 
 **Example Document:**
-```json
+```
 {
   "_id": ObjectId("courseId1"),
   "name": "Algebra",
@@ -85,7 +85,7 @@ Stores information about students.
 | `classId`  | ObjectId | References `_id` in Class collection |
 
 **Example Document:**
-```json
+```
 {
   "_id": ObjectId("studentId1"),
   "name": "Jane Smith",
@@ -96,15 +96,15 @@ Stores information about students.
 
 ### Relationships
 
-- **Teacher and Class**: Each class has an `inchargeTeacherId` that references the `_id` of a teacher in the Teacher collection.
-- **Teacher and Course**: Each course has a `teacherId` that references the `_id` of a teacher in the Teacher collection.
-- **Class and Course**: Each course has a `classId` that references the `_id` of a class in the Class collection.
-- **Class and Student**: Each student has a `classId` that references the `_id` of a class in the Class collection.
+- **Teacher and Class**: Each class has an `inchargeTeacherId` that references a teacher's `_id` in the Teacher collection.
+- **Teacher and Course**: Each course has a `teacherId` that references a teacher's `_id` in the Teacher collection.
+- **Class and Course**: Each course has a `classId` that references a class's `_id` in the Class collection.
+- **Class and Student**: Each student has a `classId` that references a class's `_id` in the Class collection.
 
 ### Example JSON Documents
 
 **Teacher:**
-```json
+```
 {
   "_id": ObjectId("teacherId1"),
   "name": "John Doe",
@@ -114,7 +114,7 @@ Stores information about students.
 ```
 
 **Class:**
-```json
+```
 {
   "_id": ObjectId("classId1"),
   "name": "Math 101",
@@ -123,7 +123,7 @@ Stores information about students.
 ```
 
 **Course:**
-```json
+```
 {
   "_id": ObjectId("courseId1"),
   "name": "Algebra",
@@ -133,7 +133,7 @@ Stores information about students.
 ```
 
 **Student:**
-```json
+```
 {
   "_id": ObjectId("studentId1"),
   "name": "Jane Smith",
