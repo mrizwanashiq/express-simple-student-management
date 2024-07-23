@@ -18,6 +18,11 @@ router.get("/", async (req, res) => {
           as: "incharge",
         },
       },
+
+      {
+        $unwind: "$incharge",
+      },
+
       {
         $lookup: {
           localField: "_id",

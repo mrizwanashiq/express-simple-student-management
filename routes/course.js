@@ -18,6 +18,11 @@ router.get("/", async (req, res) => {
           as: "teacher",
         },
       },
+
+      {
+        $unwind: "$teacher",
+      },
+
       {
         $lookup: {
           localField: "classId",
@@ -25,6 +30,10 @@ router.get("/", async (req, res) => {
           foreignField: "_id",
           as: "class",
         },
+      },
+
+      {
+        $unwind: "$class",
       },
     ]);
     res.json({ message: "Fetched successfully", data });
